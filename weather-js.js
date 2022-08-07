@@ -3,7 +3,7 @@ const EleDlt =document.getElementById('#partToRemove');
 const body =document.querySelector('.body');
 
 function fetchWeather(city) {
-    var url = "https://api.openweathermap.org/data/2.5/weather?q=London&units=metric&appid=97e240511592107455936175211fffab"
+    var url = "https://api.openweathermap.org/data/2.5/weather?q="+city+"&units=metric&appid=97e240511592107455936175211fffab"
     fetch(url)
         .then((response) => response.json())
         .then((data) => renderWeather(data));
@@ -22,33 +22,38 @@ function renderWeather(data) {
     city.style.color='white';
     results.append(city);
 
-    /*icon= document.createElement("p");
-    icon.textContent = data.weather.icon;
-    results.append(icon);*/
+   /*the_icon= document.createElement("p");
+    the_icon.textContent = data.weather.icon;
+    results.append(the_icon);*/
 
-    temp= document.createElement("p");
-    temp.textContent = "Temperature: "+data.main.temp+ "°C";
-    results.append(temp);
-
+    var tempr= document.createElement("p");
+    tempr.textContent = "Temperature: "+data.main.temp+ "°C";
+    tempr.style.color='white';
+    results.append(tempr);
 
     var tempMin= document.createElement("p");
     tempMin.textContent = "Minimum temperature: "+data.main.temp_min+"°C";
+    tempMin.style.color='white';
     results.append(tempMin);
     
     var tempMax= document.createElement("p");
     tempMax.textContent = "Maximum temperature: "+data.main.temp_max+ "°C";
+    tempMax.style.color='white';
     results.append(tempMax);
  
-    humidity= document.createElement("p");
-    humidity.textContent ="Humidity: "+data.main.humidity;
-    results.append(humidity);
+    var humidity_h= document.createElement("p");
+    humidity_h.textContent ="Humidity: "+data.main.humidity;
+    humidity_h.style.color='white';
+    results.append(humidity_h);
     
     var windSpeed= document.createElement("p");
     windSpeed.textContent = "Wind speed: "+data.wind.speed+ "km/h";
+    windSpeed.style.color='white';
     results.append(windSpeed);
 
     var windDeg= document.createElement("p");
     windDeg.textContent = "At a degree of: "+data.wind.deg+ "°";
+    windDeg.style.color='white';
     results.append(windDeg);
 
    /* main= document.createElement("p");
