@@ -11,10 +11,29 @@ body{
     background-color: black;
     color: aliceblue;
 }
-.srch-bar button img{
-    width:30px;    
+.headline{
+    display: flex;
+    justify-content: center;
+    
 }
-.srch-bar input{
+.bar{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    
+}
+button img{
+    width:25px; 
+}
+.srch-bar{
     width: 500px;
     height:30px;
+    background-color:rgba(240, 248, 255, 0.541);
+    border-radius: 10px;
+}
+.srch-bar:hover{
+    background-color: rgb(194, 190, 190);
+}
+.srch-bar::placeholder{
+    color: aliceblue;
 }
